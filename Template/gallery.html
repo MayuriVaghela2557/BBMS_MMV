@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | LifeLine Blood Bank</title>
+  <meta name="description" content="Browse photos from LifeLine Blood Bank's hospitals, donation camps, medical teams, and donor moments." />
+
+  <!-- Google Fonts: Poppins (headings) + Open Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <!-- ===================== TOP BAR ===================== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-contacts">
+        <a href="tel:+18005551234"><i class="fa-solid fa-phone"></i> +1 (800) 555-1234</a>
+        <a href="mailto:help@lifelinebloodbank.org" class="hide-small"><i class="fa-solid fa-envelope"></i> help@lifelinebloodbank.org</a>
+        <span class="hide-tablet"><i class="fa-solid fa-clock"></i> 24/7 Emergency Response</span>
+      </div>
+      <div class="topbar-actions">
+        <a href="login.html" class="login-link">Login</a>
+        <a href="register.html" class="register-link">Register</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HEADER / NAVIGATION ===================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark"><i class="fa-solid fa-droplet"></i></span>
+        <span class="brand-text">
+          <span class="brand-name">LifeLine</span>
+          <span class="brand-tag">Blood Bank</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="donate-blood.html">Donate Blood</a>
+          <a href="request-blood.html">Request Blood</a>
+          <a href="blood-availability.html">Blood Availability</a>
+          <a href="donation-camp.html">Donation Camp</a>
+          <a href="gallery.html" class="active">Gallery</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+          <a href="login.html">Login</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="donate-blood.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-droplet"></i> <span class="hide-tablet">Donate Now</span></a>
+        <button class="hamburger" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero has-photo">
+    <div class="container">
+      <span class="eyebrow page-hero-eyebrow">Moments worth sharing</span>
+      <h1>Gallery</h1>
+      <p>A look at our hospitals, camps, medical teams, and the donation moments that keep the network running.</p>
+      <div class="breadcrumbs"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> <span>Gallery</span></div>
+    </div>
+  <svg class="pulse-divider on-dark" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 17 L140 17 L162 6 L184 28 L206 17 L360 17 L382 -2 L404 36 L426 17 L620 17 L642 4 L664 30 L686 17 L900 17 L922 8 L944 26 L966 17 L1200 17" />
+  </svg>
+
+  </section>
+
+  <!-- ===================== GALLERY GRID ===================== -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="filter-tabs">
+        <button class="is-active" data-filter="all">All</button>
+        <button class="" data-filter="hospital">Hospitals</button>
+        <button class="" data-filter="camp">Donation Camps</button>
+        <button class="" data-filter="doctors">Doctors</button>
+        <button class="" data-filter="patients">Patients</button>
+        <button class="" data-filter="donation">Blood Donation</button>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="hospital" data-caption="Springfield General — Reception Wing" data-photo="images/hero-banner.jpg">
+          <img src="images/hero-banner.jpg" alt="Springfield General — Reception Wing" loading="lazy" />
+          <div class="gal-caption">Springfield General — Reception Wing</div>
+        </div>
+        <div class="gallery-item" data-category="camp" data-caption="Riverside Community Donation Camp" data-photo="images/about-team.jpg">
+          <img src="images/about-team.jpg" alt="Riverside Community Donation Camp" loading="lazy" />
+          <div class="gal-caption">Riverside Community Donation Camp</div>
+        </div>
+        <div class="gallery-item" data-category="doctors" data-caption="Screening with Dr. Elena Ward" data-photo="images/donation-camp.jpg">
+          <img src="images/donation-camp.jpg" alt="Screening with Dr. Elena Ward" loading="lazy" />
+          <div class="gal-caption">Screening with Dr. Elena Ward</div>
+        </div>
+        <div class="gallery-item" data-category="donation" data-caption="Donation in Progress" data-photo="images/gallery-donation.jpg">
+          <img src="images/gallery-donation.jpg" alt="Donation in Progress" loading="lazy" />
+          <div class="gal-caption">Donation in Progress</div>
+        </div>
+        <div class="gallery-item" data-category="patients" data-caption="Patient Recovery Ward" data-photo="images/hero-banner.jpg">
+          <img src="images/hero-banner.jpg" alt="Patient Recovery Ward" loading="lazy" />
+          <div class="gal-caption">Patient Recovery Ward</div>
+        </div>
+        <div class="gallery-item" data-category="camp" data-caption="Downtown Corporate Drive" data-photo="images/about-team.jpg">
+          <img src="images/about-team.jpg" alt="Downtown Corporate Drive" loading="lazy" />
+          <div class="gal-caption">Downtown Corporate Drive</div>
+        </div>
+        <div class="gallery-item" data-category="hospital" data-caption="Testing Laboratory" data-photo="images/donation-camp.jpg">
+          <img src="images/donation-camp.jpg" alt="Testing Laboratory" loading="lazy" />
+          <div class="gal-caption">Testing Laboratory</div>
+        </div>
+        <div class="gallery-item" data-category="doctors" data-caption="Nursing Team on Duty" data-photo="images/gallery-donation.jpg">
+          <img src="images/gallery-donation.jpg" alt="Nursing Team on Duty" loading="lazy" />
+          <div class="gal-caption">Nursing Team on Duty</div>
+        </div>
+        <div class="gallery-item" data-category="donation" data-caption="First-Time Donor Moment" data-photo="images/hero-banner.jpg">
+          <img src="images/hero-banner.jpg" alt="First-Time Donor Moment" loading="lazy" />
+          <div class="gal-caption">First-Time Donor Moment</div>
+        </div>
+        <div class="gallery-item" data-category="patients" data-caption="Platelet Transfusion" data-photo="images/about-team.jpg">
+          <img src="images/about-team.jpg" alt="Platelet Transfusion" loading="lazy" />
+          <div class="gal-caption">Platelet Transfusion</div>
+        </div>
+        <div class="gallery-item" data-category="camp" data-caption="University Campus Camp" data-photo="images/donation-camp.jpg">
+          <img src="images/donation-camp.jpg" alt="University Campus Camp" loading="lazy" />
+          <div class="gal-caption">University Campus Camp</div>
+        </div>
+        <div class="gallery-item" data-category="hospital" data-caption="Cold-Chain Storage Facility" data-photo="images/gallery-donation.jpg">
+          <img src="images/gallery-donation.jpg" alt="Cold-Chain Storage Facility" loading="lazy" />
+          <div class="gal-caption">Cold-Chain Storage Facility</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LIGHTBOX OVERLAY ===================== -->
+  <div class="lightbox-overlay">
+    <span class="lightbox-close"><i class="fa-solid fa-xmark"></i></span>
+    <div class="lightbox-box">
+      <div class="lightbox-media"><img src="images/hero-banner.jpg" alt="" /></div>
+      <div class="lightbox-caption">
+        <span class="lightbox-caption-text">Caption</span>
+        <i class="fa-solid fa-droplet" style="color:var(--color-primary);"></i>
+      </div>
+    </div>
+  </div>
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-mark"><i class="fa-solid fa-droplet"></i></span>
+            <span class="brand-text">
+              <span class="brand-name">LifeLine</span>
+              <span class="brand-tag">Blood Bank</span>
+            </span>
+          </a>
+          <div class="footer-about">
+            <p>A community-driven blood bank network connecting donors, hospitals, and patients so no request ever goes unanswered.</p>
+          </div>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="donation-camp.html"><i class="fa-solid fa-chevron-right"></i> Donation Camps</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="faq.html"><i class="fa-solid fa-chevron-right"></i> FAQ</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="donate-blood.html"><i class="fa-solid fa-chevron-right"></i> Donate Blood</a></li>
+            <li><a href="request-blood.html"><i class="fa-solid fa-chevron-right"></i> Request Blood</a></li>
+            <li><a href="blood-availability.html"><i class="fa-solid fa-chevron-right"></i> Blood Availability</a></li>
+            <li><a href="register.html"><i class="fa-solid fa-chevron-right"></i> Become a Donor</a></li>
+            <li><a href="login.html"><i class="fa-solid fa-chevron-right"></i> Donor Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot"></i> <span>221 Meridian Avenue, Springfield, ST 62704</span></li>
+            <li><i class="fa-solid fa-phone"></i> <span>+1 (800) 555-1234</span></li>
+            <li><i class="fa-solid fa-envelope"></i> <span>help@lifelinebloodbank.org</span></li>
+          </ul>
+          <div class="newsletter-box">
+            <h4>Newsletter</h4>
+            <form class="newsletter-form" data-frontend-only="#newsletterNote">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <span>&copy; 2026 LifeLine Blood Bank. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

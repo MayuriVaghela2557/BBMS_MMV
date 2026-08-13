@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blood Availability | LifeLine Blood Bank</title>
+  <meta name="description" content="Check live blood availability across LifeLine's partner hospitals by blood group, city, or hospital name." />
+
+  <!-- Google Fonts: Poppins (headings) + Open Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <!-- ===================== TOP BAR ===================== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-contacts">
+        <a href="tel:+18005551234"><i class="fa-solid fa-phone"></i> +1 (800) 555-1234</a>
+        <a href="mailto:help@lifelinebloodbank.org" class="hide-small"><i class="fa-solid fa-envelope"></i> help@lifelinebloodbank.org</a>
+        <span class="hide-tablet"><i class="fa-solid fa-clock"></i> 24/7 Emergency Response</span>
+      </div>
+      <div class="topbar-actions">
+        <a href="login.html" class="login-link">Login</a>
+        <a href="register.html" class="register-link">Register</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HEADER / NAVIGATION ===================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark"><i class="fa-solid fa-droplet"></i></span>
+        <span class="brand-text">
+          <span class="brand-name">LifeLine</span>
+          <span class="brand-tag">Blood Bank</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="donate-blood.html">Donate Blood</a>
+          <a href="request-blood.html">Request Blood</a>
+          <a href="blood-availability.html" class="active">Blood Availability</a>
+          <a href="donation-camp.html">Donation Camp</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+          <a href="login.html">Login</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="donate-blood.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-droplet"></i> <span class="hide-tablet">Donate Now</span></a>
+        <button class="hamburger" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero has-photo">
+    <div class="container">
+      <span class="eyebrow page-hero-eyebrow">Live inventory (static demo data)</span>
+      <h1>Blood Availability</h1>
+      <p>Check current blood stock across our partner hospitals. Data shown is static placeholder content for this frontend phase.</p>
+      <div class="breadcrumbs"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> <span>Blood Availability</span></div>
+    </div>
+  <svg class="pulse-divider on-dark" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 17 L140 17 L162 6 L184 28 L206 17 L360 17 L382 -2 L404 36 L426 17 L620 17 L642 4 L664 30 L686 17 L900 17 L922 8 L944 26 L966 17 L1200 17" />
+  </svg>
+
+  </section>
+
+  <!-- ===================== BLOOD GROUP QUICK FILTER ===================== -->
+  <section class="bloodgroups-section">
+    <div class="container">
+      <div class="section-head centered">
+        <span class="eyebrow">Quick filter</span>
+        <h2>Check by Blood Group</h2>
+        <p>Select a group to instantly filter the hospital availability table below.</p>
+      </div>
+      <div class="bloodgroup-grid">
+        <div class="bg-card" data-group-filter="A+" style="cursor:pointer;">
+          <div class="bg-icon">A+</div>
+          <h4>A Positive</h4>
+          <p class="avail">Stock: <strong>Good</strong></p>
+          <span class="btn btn-outline btn-sm btn-block">Filter Table</span>
+        </div>
+        <div class="bg-card" data-group-filter="A-" style="cursor:pointer;">
+          <div class="bg-icon">A-</div>
+          <h4>A Negative</h4>
+          <p class="avail low">Stock: <strong>Low</strong></p>
+          <span class="btn btn-outline btn-sm btn-block">Filter Table</span>
+        </div>
+        <div class="bg-card" data-group-filter="B+" style="cursor:pointer;">
+          <div class="bg-icon">B+</div>
+          <h4>B Positive</h4>
+          <p class="avail">Stock: <strong>Good</strong></p>
+          <span class="btn btn-outline btn-sm btn-block">Filter Table</span>
+        </div>
+        <div class="bg-card" data-group-filter="B-" style="cursor:pointer;">
+          <div class="bg-icon">B-</div>
+          <h4>B Negative</h4>
+          <p class="avail low">Stock: <strong>Low</strong></p>
+          <span class="btn btn-outline btn-sm btn-block">Filter Table</span>
+        </div>
+        <div class="bg-card" data-group-filter="AB+" style="cursor:pointer;">
+          <div class="bg-icon">AB+</div>
+          <h4>AB Positive</h4>
+          <p class="avail">Stock: <strong>Good</strong></p>
+          <span class="btn btn-outline btn-sm btn-block">Filter Table</span>
+        </div>
+        <div class="bg-card" data-group-filter="AB-" style="cursor:pointer;">
+          <div class="bg-icon">AB-</div>
+          <h4>AB Negative</h4>
+          <p class="avail low">Stock: <strong>Critical</strong></p>
+          <span class="btn btn-outline btn-sm btn-block">Filter Table</span>
+        </div>
+        <div class="bg-card" data-group-filter="O+" style="cursor:pointer;">
+          <div class="bg-icon">O+</div>
+          <h4>O Positive</h4>
+          <p class="avail">Stock: <strong>Good</strong></p>
+          <span class="btn btn-outline btn-sm btn-block">Filter Table</span>
+        </div>
+        <div class="bg-card" data-group-filter="O-" style="cursor:pointer;">
+          <div class="bg-icon">O-</div>
+          <h4>O Negative</h4>
+          <p class="avail low">Stock: <strong>Critical</strong></p>
+          <span class="btn btn-outline btn-sm btn-block">Filter Table</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SEARCH + TABLE ===================== -->
+  <section class="availability-table-section bg-tint">
+    <div class="container">
+      <div class="section-head centered">
+        <span class="eyebrow">Search by hospital or city</span>
+        <h2>Hospital-wise Availability</h2>
+      </div>
+
+      <div class="search-bar-wrap">
+        <input type="text" id="availSearchInput" placeholder="Search by hospital or city..." />
+        <select id="availGroupSelect">
+          <option value="all">All Blood Groups</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
+        <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+      </div>
+
+      <div class="avail-table-wrap">
+        <table class="avail-table">
+          <thead>
+            <tr>
+              <th>Hospital Name</th>
+              <th>City</th>
+              <th>Blood Group</th>
+              <th>Available Units</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-hospital="St. Mary's Hospital" data-city="Springfield" data-group="A+">
+              <td>St. Mary's Hospital</td>
+              <td>Springfield</td>
+              <td>A+</td>
+              <td>42 units</td>
+              <td><span class="badge status-good">Good Stock</span></td>
+            </tr>
+            <tr data-hospital="Riverside Medical Center" data-city="Springfield" data-group="O-">
+              <td>Riverside Medical Center</td>
+              <td>Springfield</td>
+              <td>O-</td>
+              <td>3 units</td>
+              <td><span class="badge status-critical">Critical</span></td>
+            </tr>
+            <tr data-hospital="Springfield General Hospital" data-city="Springfield" data-group="B+">
+              <td>Springfield General Hospital</td>
+              <td>Springfield</td>
+              <td>B+</td>
+              <td>27 units</td>
+              <td><span class="badge status-good">Good Stock</span></td>
+            </tr>
+            <tr data-hospital="Meridian Health Institute" data-city="Fairview" data-group="AB-">
+              <td>Meridian Health Institute</td>
+              <td>Fairview</td>
+              <td>AB-</td>
+              <td>5 units</td>
+              <td><span class="badge status-critical">Critical</span></td>
+            </tr>
+            <tr data-hospital="Fairview Community Hospital" data-city="Fairview" data-group="A-">
+              <td>Fairview Community Hospital</td>
+              <td>Fairview</td>
+              <td>A-</td>
+              <td>11 units</td>
+              <td><span class="badge status-low">Low Stock</span></td>
+            </tr>
+            <tr data-hospital="St. Luke's Medical Center" data-city="Oakdale" data-group="O+">
+              <td>St. Luke's Medical Center</td>
+              <td>Oakdale</td>
+              <td>O+</td>
+              <td>58 units</td>
+              <td><span class="badge status-good">Good Stock</span></td>
+            </tr>
+            <tr data-hospital="Oakdale Regional Hospital" data-city="Oakdale" data-group="B-">
+              <td>Oakdale Regional Hospital</td>
+              <td>Oakdale</td>
+              <td>B-</td>
+              <td>9 units</td>
+              <td><span class="badge status-low">Low Stock</span></td>
+            </tr>
+            <tr data-hospital="Northside Trauma Center" data-city="Northside" data-group="AB+">
+              <td>Northside Trauma Center</td>
+              <td>Northside</td>
+              <td>AB+</td>
+              <td>19 units</td>
+              <td><span class="badge status-good">Good Stock</span></td>
+            </tr>
+            <tr data-hospital="Northside General Hospital" data-city="Northside" data-group="O-">
+              <td>Northside General Hospital</td>
+              <td>Northside</td>
+              <td>O-</td>
+              <td>4 units</td>
+              <td><span class="badge status-critical">Critical</span></td>
+            </tr>
+            <tr data-hospital="Cedar Valley Hospital" data-city="Cedar Valley" data-group="A+">
+              <td>Cedar Valley Hospital</td>
+              <td>Cedar Valley</td>
+              <td>A+</td>
+              <td>33 units</td>
+              <td><span class="badge status-good">Good Stock</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-mark"><i class="fa-solid fa-droplet"></i></span>
+            <span class="brand-text">
+              <span class="brand-name">LifeLine</span>
+              <span class="brand-tag">Blood Bank</span>
+            </span>
+          </a>
+          <div class="footer-about">
+            <p>A community-driven blood bank network connecting donors, hospitals, and patients so no request ever goes unanswered.</p>
+          </div>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="donation-camp.html"><i class="fa-solid fa-chevron-right"></i> Donation Camps</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="faq.html"><i class="fa-solid fa-chevron-right"></i> FAQ</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="donate-blood.html"><i class="fa-solid fa-chevron-right"></i> Donate Blood</a></li>
+            <li><a href="request-blood.html"><i class="fa-solid fa-chevron-right"></i> Request Blood</a></li>
+            <li><a href="blood-availability.html"><i class="fa-solid fa-chevron-right"></i> Blood Availability</a></li>
+            <li><a href="register.html"><i class="fa-solid fa-chevron-right"></i> Become a Donor</a></li>
+            <li><a href="login.html"><i class="fa-solid fa-chevron-right"></i> Donor Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot"></i> <span>221 Meridian Avenue, Springfield, ST 62704</span></li>
+            <li><i class="fa-solid fa-phone"></i> <span>+1 (800) 555-1234</span></li>
+            <li><i class="fa-solid fa-envelope"></i> <span>help@lifelinebloodbank.org</span></li>
+          </ul>
+          <div class="newsletter-box">
+            <h4>Newsletter</h4>
+            <form class="newsletter-form" data-frontend-only="#newsletterNote">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <span>&copy; 2026 LifeLine Blood Bank. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

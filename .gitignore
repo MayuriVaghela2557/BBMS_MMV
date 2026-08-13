@@ -1,0 +1,35 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build folders
+bin/
+obj/
+
+# Visual Studio cache/options
+*.VC.db
+*.VC.VC.opendb
+
+# Rider
+.idea/
+
+# Node
+node_modules/
+
+# Packages
+packages/
+
+# Database files
+App_Data/*.mdf
+App_Data/*.ldf
+
+# Logs
+*.log
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini

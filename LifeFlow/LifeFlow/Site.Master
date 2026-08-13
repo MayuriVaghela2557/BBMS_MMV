@@ -1,0 +1,155 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="LifeFlow.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LifeLine Blood Bank</title>
+  <meta name="description" content="LifeLine Blood Bank connects donors, hospitals, and patients — donate blood, request blood, or find live availability near you." />
+
+  <!-- Google Fonts: Poppins (headings) + Open Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <asp:ContentPlaceHolder ID="head" runat="server">
+  </asp:ContentPlaceHolder>
+</head>
+<body>
+  <form id="form1" runat="server">
+    <!-- ===================== TOP BAR ===================== -->
+    <div class="topbar">
+      <div class="container">
+        <div class="topbar-contacts">
+          <a href="tel:+18005551234"><i class="fa-solid fa-phone"></i> +1 (800) 555-1234</a>
+          <a href="mailto:help@lifelinebloodbank.org" class="hide-small"><i class="fa-solid fa-envelope"></i> help@lifelinebloodbank.org</a>
+          <span class="hide-tablet"><i class="fa-solid fa-clock"></i> 24/7 Emergency Response</span>
+        </div>
+        <div class="topbar-actions">
+          <a href="Login.aspx" class="login-link">Login</a>
+          <a href="Register.aspx" class="register-link">Register</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== HEADER / NAVIGATION ===================== -->
+    <header class="site-header">
+      <div class="container navbar">
+        <a href="Home.aspx" class="brand">
+          <span class="brand-mark"><i class="fa-solid fa-droplet"></i></span>
+          <span class="brand-text">
+            <span class="brand-name">LifeLine</span>
+            <%--<span class="brand-tag">Blood Bank</span>--%>
+          </span>
+        </a>
+
+        <nav class="nav-menu" aria-label="Primary navigation">
+          <a href="Home.aspx" class="<%= GetActiveClass("Home.aspx") %>">Home</a>
+          <a href="About.aspx" class="<%= GetActiveClass("About.aspx") %>">About</a>
+          <a href="DonateBlood.aspx" class="<%= GetActiveClass("DonateBlood.aspx") %>">Donate Blood</a>
+          <a href="RequestBlood.aspx" class="<%= GetActiveClass("RequestBlood.aspx") %>">Request Blood</a>
+          <a href="BloodAvailability.aspx" class="<%= GetActiveClass("BloodAvailability.aspx") %>">Blood Availability</a>
+          <a href="DonationCamp.aspx" class="<%= GetActiveClass("DonationCamp.aspx") %>">Donation Camp</a>
+          <a href="Gallery.aspx" class="<%= GetActiveClass("Gallery.aspx") %>">Gallery</a>
+          <a href="FAQ.aspx" class="<%= GetActiveClass("FAQ.aspx") %>">FAQ</a>
+          <a href="Contact.aspx" class="<%= GetActiveClass("Contact.aspx") %>">Contact</a>
+       
+        </nav>
+
+        <div class="nav-cta">
+          <a href="DonateBlood.aspx" class="btn btn-primary btn-sm"><i class="fa-solid fa-droplet"></i> <span class="hide-tablet">Donate Now</span></a>
+          <button type="button" class="hamburger" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main>
+      <asp:ContentPlaceHolder ID="MainContent" runat="server">
+      </asp:ContentPlaceHolder>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col brand-col">
+            <a href="Home.aspx" class="brand">
+              <span class="brand-mark"><i class="fa-solid fa-droplet"></i></span>
+              <span class="brand-text">
+                <span class="brand-name">LifeLine</span>
+                <span class="brand-tag">Blood Bank</span>
+              </span>
+            </a>
+            <div class="footer-about">
+              <p>A community-driven blood bank network connecting donors, hospitals, and patients so no request ever goes unanswered.</p>
+            </div>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="About.aspx"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+              <li><a href="DonationCamp.aspx"><i class="fa-solid fa-chevron-right"></i> Donation Camps</a></li>
+              <li><a href="Gallery.aspx"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+              <li><a href="FAQ.aspx"><i class="fa-solid fa-chevron-right"></i> FAQ</a></li>
+              <li><a href="Contact.aspx"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="DonateBlood.aspx"><i class="fa-solid fa-chevron-right"></i> Donate Blood</a></li>
+              <li><a href="RequestBlood.aspx"><i class="fa-solid fa-chevron-right"></i> Request Blood</a></li>
+              <li><a href="BloodAvailability.aspx"><i class="fa-solid fa-chevron-right"></i> Blood Availability</a></li>
+              <li><a href="Register.aspx"><i class="fa-solid fa-chevron-right"></i> Become a Donor</a></li>
+              <li><a href="Login.aspx"><i class="fa-solid fa-chevron-right"></i> Donor Login</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact Info</h4>
+            <ul class="footer-contact">
+              <li><i class="fa-solid fa-location-dot"></i> <span>221 Meridian Avenue, Springfield, ST 62704</span></li>
+              <li><i class="fa-solid fa-phone"></i> <span>+1 (800) 555-1234</span></li>
+              <li><i class="fa-solid fa-envelope"></i> <span>help@lifelinebloodbank.org</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <span>&copy; 2026 LifeLine Blood Bank. All rights reserved.</span>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button type="button" class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  </form>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

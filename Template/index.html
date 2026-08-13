@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | LifeLine Blood Bank</title>
+  <meta name="description" content="LifeLine Blood Bank connects donors, hospitals, and patients — donate blood, request blood, or find live availability near you." />
+
+  <!-- Google Fonts: Poppins (headings) + Open Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <!-- ===================== TOP BAR ===================== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-contacts">
+        <a href="tel:+18005551234"><i class="fa-solid fa-phone"></i> +1 (800) 555-1234</a>
+        <a href="mailto:help@lifelinebloodbank.org" class="hide-small"><i class="fa-solid fa-envelope"></i> help@lifelinebloodbank.org</a>
+        <span class="hide-tablet"><i class="fa-solid fa-clock"></i> 24/7 Emergency Response</span>
+      </div>
+      <div class="topbar-actions">
+        <a href="login.html" class="login-link">Login</a>
+        <a href="register.html" class="register-link">Register</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HEADER / NAVIGATION ===================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark"><i class="fa-solid fa-droplet"></i></span>
+        <span class="brand-text">
+          <span class="brand-name">LifeLine</span>
+          <span class="brand-tag">Blood Bank</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Primary navigation">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="donate-blood.html">Donate Blood</a>
+          <a href="request-blood.html">Request Blood</a>
+          <a href="blood-availability.html">Blood Availability</a>
+          <a href="donation-camp.html">Donation Camp</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+          <a href="login.html">Login</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="donate-blood.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-droplet"></i> <span class="hide-tablet">Donate Now</span></a>
+        <button class="hamburger" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Every drop counts</span>
+        <h1>Donate Blood,<br>Save <span>Lives</span></h1>
+        <p>Every donation can save multiple lives. Join a network of donors, hospitals, and volunteers keeping the region's blood supply steady, safe, and ready for the moment it's needed.</p>
+        <div class="hero-actions">
+          <a href="donate-blood.html" class="btn btn-primary"><i class="fa-solid fa-droplet"></i> Donate Now</a>
+          <a href="request-blood.html" class="btn btn-ghost-light"><i class="fa-solid fa-hand-holding-medical"></i> Request Blood</a>
+        </div>
+        <div class="hero-mini-stats">
+          <div><strong data-counter="12480">0</strong><span>Registered Donors</span></div>
+          <div><strong data-counter="860">0</strong><span>Hospital Partners</span></div>
+          <div><strong data-counter="34200">0</strong><span>Lives Saved</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-photo-card">
+          <img src="images/hero-banner.jpg" alt="Blood donor giving blood at a LifeLine donation center" />
+          <div class="hero-photo-badge">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <div><strong>Live Donation</strong><span>Springfield Center, Today</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <svg class="pulse-divider on-dark pulse-anim" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 17 L140 17 L162 6 L184 28 L206 17 L360 17 L382 -2 L404 36 L426 17 L620 17 L642 4 L664 30 L686 17 L900 17 L922 8 L944 26 L966 17 L1200 17" />
+  </svg>
+
+  </section>
+
+  <!-- ===================== STATISTICS SECTION ===================== -->
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-card">
+        <div class="stat-item">
+          <i class="fa-solid fa-user-group"></i>
+          <span class="num" data-counter="12480">0</span>
+          <span class="label">Total Donors</span>
+        </div>
+        <div class="stat-item">
+          <i class="fa-solid fa-flask-vial"></i>
+          <span class="num" data-counter="48950">0</span>
+          <span class="label">Blood Units Collected</span>
+        </div>
+        <div class="stat-item">
+          <i class="fa-solid fa-hospital"></i>
+          <span class="num" data-counter="860">0</span>
+          <span class="label">Partner Hospitals</span>
+        </div>
+        <div class="stat-item">
+          <i class="fa-solid fa-heart-circle-check"></i>
+          <span class="num" data-counter="34200">0</span>
+          <span class="label">Lives Saved</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BLOOD GROUPS SECTION ===================== -->
+  <section class="bloodgroups-section">
+    <div class="container">
+      <div class="section-head centered">
+        <span class="eyebrow">Live inventory</span>
+        <h2>Blood Availability by Group</h2>
+        <p>A quick snapshot of current stock levels across our partner blood banks. Tap a group to see full hospital-wise availability.</p>
+      </div>
+      <div class="bloodgroup-grid">
+        <a href="blood-availability.html" class="bg-card"><div class="bg-icon">A+</div><h4>A Positive</h4><p class="avail">Stock: <strong>Good</strong></p><span class="btn btn-outline btn-sm btn-block">View</span></a>
+        <a href="blood-availability.html" class="bg-card"><div class="bg-icon">A-</div><h4>A Negative</h4><p class="avail low">Stock: <strong>Low</strong></p><span class="btn btn-outline btn-sm btn-block">View</span></a>
+        <a href="blood-availability.html" class="bg-card"><div class="bg-icon">B+</div><h4>B Positive</h4><p class="avail">Stock: <strong>Good</strong></p><span class="btn btn-outline btn-sm btn-block">View</span></a>
+        <a href="blood-availability.html" class="bg-card"><div class="bg-icon">B-</div><h4>B Negative</h4><p class="avail low">Stock: <strong>Low</strong></p><span class="btn btn-outline btn-sm btn-block">View</span></a>
+        <a href="blood-availability.html" class="bg-card"><div class="bg-icon">AB+</div><h4>AB Positive</h4><p class="avail">Stock: <strong>Good</strong></p><span class="btn btn-outline btn-sm btn-block">View</span></a>
+        <a href="blood-availability.html" class="bg-card"><div class="bg-icon">AB-</div><h4>AB Negative</h4><p class="avail low">Stock: <strong>Critical</strong></p><span class="btn btn-outline btn-sm btn-block">View</span></a>
+        <a href="blood-availability.html" class="bg-card"><div class="bg-icon">O+</div><h4>O Positive</h4><p class="avail">Stock: <strong>Good</strong></p><span class="btn btn-outline btn-sm btn-block">View</span></a>
+        <a href="blood-availability.html" class="bg-card"><div class="bg-icon">O-</div><h4>O Negative</h4><p class="avail low">Stock: <strong>Critical</strong></p><span class="btn btn-outline btn-sm btn-block">View</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY DONATE BLOOD SECTION ===================== -->
+  <section class="why-donate-section bg-tint">
+    <div class="container">
+      <div class="section-head centered">
+        <span class="eyebrow">The impact</span>
+        <h2>Why Donate Blood</h2>
+        <p>Donating blood is one of the simplest acts with the biggest ripple effect — for patients, for hospitals, and for your own health.</p>
+      </div>
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
+          <h3>Save Lives</h3>
+          <p>A single donation can be separated into red cells, platelets, and plasma — helping up to three patients at once.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-shield-heart"></i></div>
+          <h3>Safe Process</h3>
+          <p>Every donation follows strict sterile, single-use equipment protocols supervised by licensed medical staff.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-stethoscope"></i></div>
+          <h3>Health Benefits</h3>
+          <p>Donors receive a free mini health screening and studies link regular donation to better iron regulation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS SECTION ===================== -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-head centered">
+        <span class="eyebrow">The journey of a donation</span>
+        <h2>How It Works</h2>
+        <p>From sign-up to a patient's bedside, here's the path every donation travels.</p>
+      </div>
+      <div class="process-track">
+        <div class="process-step">
+          <div class="process-connector"></div>
+          <div class="process-node"><i class="fa-solid fa-user-plus"></i></div>
+          <h4>Register</h4>
+          <p>Sign up online or at a camp</p>
+        </div>
+        <div class="process-step">
+          <div class="process-connector"></div>
+          <div class="process-node"><i class="fa-solid fa-droplet"></i></div>
+          <h4>Donate</h4>
+          <p>A quick, guided donation</p>
+        </div>
+        <div class="process-step">
+          <div class="process-connector"></div>
+          <div class="process-node"><i class="fa-solid fa-vial-circle-check"></i></div>
+          <h4>Testing</h4>
+          <p>Screened for safety &amp; type</p>
+        </div>
+        <div class="process-step">
+          <div class="process-connector"></div>
+          <div class="process-node"><i class="fa-solid fa-warehouse"></i></div>
+          <h4>Storage</h4>
+          <p>Cold-chain storage on-site</p>
+        </div>
+        <div class="process-step is-final">
+          <div class="process-node"><i class="fa-solid fa-hand-holding-heart"></i></div>
+          <h4>Patient</h4>
+          <p>Delivered where it's needed</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DONATION CAMPS SECTION ===================== -->
+  <section class="camps-section">
+    <div class="container">
+      <div class="section-head centered">
+        <span class="eyebrow">Get involved nearby</span>
+        <h2>Upcoming Donation Camps</h2>
+        <p>Can't make it to a center? Find a community camp close to you.</p>
+      </div>
+      <div class="camp-grid">
+        <div class="camp-card">
+          <div class="camp-media">
+            <img src="images/donation-camp.jpg" alt="Riverside Community donation camp" />
+            <div class="camp-date-badge"><span class="d">14</span><span class="m">Aug</span></div>
+          </div>
+          <div class="camp-body">
+            <h3>Riverside Community Camp</h3>
+            <div class="camp-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Riverside Community Hall</span>
+              <span><i class="fa-solid fa-clock"></i> 9:00 AM – 3:00 PM</span>
+            </div>
+            <a href="donation-camp.html" class="btn btn-outline btn-sm btn-block">Register</a>
+          </div>
+        </div>
+        <div class="camp-card">
+          <div class="camp-media">
+            <img src="images/gallery-donation.jpg" alt="Downtown Corporate donation drive" />
+            <div class="camp-date-badge"><span class="d">21</span><span class="m">Aug</span></div>
+          </div>
+          <div class="camp-body">
+            <h3>Downtown Corporate Drive</h3>
+            <div class="camp-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Meridian Business Tower</span>
+              <span><i class="fa-solid fa-clock"></i> 10:00 AM – 4:00 PM</span>
+            </div>
+            <a href="donation-camp.html" class="btn btn-outline btn-sm btn-block">Register</a>
+          </div>
+        </div>
+        <div class="camp-card">
+          <div class="camp-media">
+            <img src="images/about-team.jpg" alt="University Campus donation camp" />
+            <div class="camp-date-badge"><span class="d">29</span><span class="m">Aug</span></div>
+          </div>
+          <div class="camp-body">
+            <h3>University Campus Camp</h3>
+            <div class="camp-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Springfield State University</span>
+              <span><i class="fa-solid fa-clock"></i> 8:30 AM – 2:30 PM</span>
+            </div>
+            <a href="donation-camp.html" class="btn btn-outline btn-sm btn-block">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS SECTION ===================== -->
+  <section class="testi-section">
+    <div class="container">
+      <div class="section-head centered">
+        <span class="eyebrow" style="color:rgba(255,255,255,0.7)">Voices from our community</span>
+        <h2 style="color:#fff;">Testimonials</h2>
+      </div>
+      <div class="testi-slider">
+        <div class="testi-slide is-active">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="quote">I donated for the first time at a camp near my office and the staff walked me through every step. Knowing it could help three different patients made it an easy decision to come back.</p>
+          <div class="testi-person">
+            <div class="testi-avatar">M</div>
+            <div><div class="name">Maria Chen</div><div class="role">Regular Donor, 6 donations</div></div>
+          </div>
+        </div>
+        <div class="testi-slide">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="quote">When our hospital had a sudden shortage of O-negative units, LifeLine coordinated a same-day supply. That kind of response time genuinely saves lives.</p>
+          <div class="testi-person">
+            <div class="testi-avatar">D</div>
+            <div><div class="name">Dr. Raj Patel</div><div class="role">Chief of Surgery, St. Mary's Hospital</div></div>
+          </div>
+        </div>
+        <div class="testi-slide">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="quote">My father needed platelets during chemotherapy and the request portal connected us to a donor within hours. We are forever grateful to this community.</p>
+          <div class="testi-person">
+            <div class="testi-avatar">S</div>
+            <div><div class="name">Sofia Ibrahim</div><div class="role">Patient Family Member</div></div>
+          </div>
+        </div>
+        <div class="testi-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LATEST NEWS SECTION ===================== -->
+  <section class="news-section">
+    <div class="container">
+      <div class="section-head centered">
+        <span class="eyebrow">Stay informed</span>
+        <h2>Latest News</h2>
+        <p>Updates on awareness campaigns, hospital partnerships, and upcoming events.</p>
+      </div>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-media"><i class="fa-solid fa-bullhorn"></i></div>
+          <div class="news-body">
+            <span class="news-tag">Awareness</span>
+            <h3>World Blood Donor Day: What We Learned This Year</h3>
+            <div class="news-date"><i class="fa-regular fa-calendar"></i> June 14, 2026</div>
+            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-media"><i class="fa-solid fa-hospital-user"></i></div>
+          <div class="news-body">
+            <span class="news-tag">Hospital Update</span>
+            <h3>Three New Hospitals Join the LifeLine Network</h3>
+            <div class="news-date"><i class="fa-regular fa-calendar"></i> July 2, 2026</div>
+            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-media"><i class="fa-solid fa-people-group"></i></div>
+          <div class="news-body">
+            <span class="news-tag">Events</span>
+            <h3>Recap: Our Biggest Donation Drive Yet</h3>
+            <div class="news-date"><i class="fa-regular fa-calendar"></i> July 20, 2026</div>
+            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CALL TO ACTION SECTION ===================== -->
+  <section class="cta-band">
+    <div class="container cta-inner">
+      <div>
+        <h2>Become a Blood Donor Today</h2>
+        <p>Registration takes less than five minutes. Your next donation could be someone's second chance.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="register.html" class="btn btn-light"><i class="fa-solid fa-user-plus"></i> Register as Donor</a>
+        <a href="donate-blood.html" class="btn btn-ghost-light"><i class="fa-solid fa-droplet"></i> Donate Blood</a>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-mark"><i class="fa-solid fa-droplet"></i></span>
+            <span class="brand-text">
+              <span class="brand-name">LifeLine</span>
+              <span class="brand-tag">Blood Bank</span>
+            </span>
+          </a>
+          <div class="footer-about">
+            <p>A community-driven blood bank network connecting donors, hospitals, and patients so no request ever goes unanswered.</p>
+          </div>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="donation-camp.html"><i class="fa-solid fa-chevron-right"></i> Donation Camps</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="faq.html"><i class="fa-solid fa-chevron-right"></i> FAQ</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="donate-blood.html"><i class="fa-solid fa-chevron-right"></i> Donate Blood</a></li>
+            <li><a href="request-blood.html"><i class="fa-solid fa-chevron-right"></i> Request Blood</a></li>
+            <li><a href="blood-availability.html"><i class="fa-solid fa-chevron-right"></i> Blood Availability</a></li>
+            <li><a href="register.html"><i class="fa-solid fa-chevron-right"></i> Become a Donor</a></li>
+            <li><a href="login.html"><i class="fa-solid fa-chevron-right"></i> Donor Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot"></i> <span>221 Meridian Avenue, Springfield, ST 62704</span></li>
+            <li><i class="fa-solid fa-phone"></i> <span>+1 (800) 555-1234</span></li>
+            <li><i class="fa-solid fa-envelope"></i> <span>help@lifelinebloodbank.org</span></li>
+          </ul>
+          <div class="newsletter-box">
+            <h4>Newsletter</h4>
+            <form class="newsletter-form" data-frontend-only="#newsletterNote">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <span>&copy; 2026 LifeLine Blood Bank. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+/* ==========================================================================
+   RESPONSIVE.CSS — breakpoints: Laptop (1200px) / Tablet (992px & 768px) / Mobile (576px)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   LAPTOP  (<= 1200px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .container { padding: 0 20px; }
+  .hero-grid { gap: 34px; }
+  .footer-grid { gap: 28px; }
+}
+
+/* --------------------------------------------------------------------------
+   TABLET  (<= 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  section { padding: 64px 0; }
+
+  .topbar-contacts span.hide-tablet { display: none; }
+
+  .nav-menu { display: none; }
+  .hamburger { display: flex; }
+  .nav-cta .btn span.hide-tablet { display: none; }
+
+  .hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .hero-copy p { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .hero-mini-stats { justify-content: center; }
+  .hero-visual { margin-top: 20px; }
+  .hero-drop { width: 46%; }
+
+  .stats-card { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item { border-bottom: 1px solid var(--color-line); }
+  .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
+
+  .bloodgroup-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .value-grid { grid-template-columns: repeat(2, 1fr); }
+  .camp-grid { grid-template-columns: repeat(2, 1fr); }
+  .news-grid { grid-template-columns: repeat(2, 1fr); }
+  .mv-grid { grid-template-columns: repeat(1, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .choose-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .split-block { grid-template-columns: 1fr; gap: 34px; }
+  .split-block.reverse .split-media { order: 0; }
+  .split-media { min-height: 260px; }
+
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .form-shell { padding: 34px 26px; }
+
+  .cta-inner { flex-direction: column; text-align: center; }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE NAV DRAWER (shared 992px behaviour)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .nav-menu.is-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--color-white);
+    padding: 14px 24px 24px;
+    box-shadow: 0 16px 26px rgba(0,0,0,0.1);
+    gap: 4px;
+  }
+  .nav-menu.is-open a { padding: 13px 16px; border-radius: 10px; width: 100%; }
+  .nav-cta.is-open {
+    display: flex; flex-direction: column;
+    position: absolute; top: calc(100% + 208px); left: 0; right: 0;
+    background: var(--color-white); padding: 0 24px 24px; gap: 10px;
+    box-shadow: 0 16px 26px rgba(0,0,0,0.1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TABLET SMALL  (<= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .topbar .topbar-contacts a.hide-small { display: none; }
+  .brand-text .brand-tag { display: none; }
+
+  .page-hero { padding: 54px 0 40px; }
+
+  .bloodgroup-grid { grid-template-columns: repeat(2, 1fr); }
+  .value-grid { grid-template-columns: 1fr; }
+  .camp-grid { grid-template-columns: 1fr; }
+  .news-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .choose-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .process-track { flex-direction: column; gap: 34px; align-items: stretch; }
+  .process-connector { display: none; }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 34px; }
+
+  .form-grid { grid-template-columns: 1fr; }
+
+  .stats-strip .container { transform: translateY(-30px); }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE  (<= 576px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 576px) {
+  section { padding: 50px 0; }
+
+  .topbar-actions .register-link { display: none; }
+
+  .brand-mark { width: 38px; height: 38px; font-size: 17px; }
+  .brand-text .brand-name { font-size: 16.5px; }
+
+  .hero { padding-top: 30px; padding-bottom: 50px; }
+  .hero-copy p { font-size: 16px; }
+  .hero-mini-stats { flex-wrap: wrap; gap: 22px; row-gap: 16px; justify-content: center; }
+
+  .stats-card { grid-template-columns: 1fr 1fr; }
+  .stat-item { padding: 24px 14px; }
+  .stat-item .num { font-size: 26px; }
+
+  .bloodgroup-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .choose-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .cta-actions { flex-direction: column; width: 100%; }
+  .cta-actions .btn { width: 100%; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom .container { flex-direction: column; text-align: center; }
+
+  .form-shell { padding: 26px 18px; }
+  .emergency-scale { flex-wrap: wrap; }
+  .emergency-scale label { min-width: 30%; }
+
+  .search-bar-wrap { flex-direction: column; }
+
+  table.avail-table { font-size: 13px; }
+  table.avail-table th, table.avail-table td { padding: 12px 14px; }
+
+  .back-to-top { right: 16px; bottom: 16px; width: 42px; height: 42px; }
+}
