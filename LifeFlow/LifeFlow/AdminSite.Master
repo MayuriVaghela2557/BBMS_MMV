@@ -1,0 +1,462 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminSite.Master.cs" Inherits="LifeFlow.AdminSiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel - LifeFlow Blood Bank System</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+        :root {
+            --sidebar-bg: #283645;
+            --sidebar-hover: #1f2a36;
+            --sidebar-active: #e74c3c;
+            --primary: #e74c3c;
+            --primary-dark: #c0392b;
+            --secondary: #34495e;
+            --success: #2ecc71;
+            --info: #3498db;
+            --warning: #f1c40f;
+            --danger: #e74c3c;
+            --light-bg: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-dark: #2c3e50;
+            --text-muted: #7f8c8d;
+            --border-color: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Inter', 'Segoe UI', sans-serif; background-color: var(--light-bg); color: var(--text-dark); overflow-x: hidden; }
+        
+        /* Layout Sidebar (Compact 240px) */
+        .admin-sidebar { 
+            width: 240px; 
+            background-color: var(--sidebar-bg); 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            height: 100vh; 
+            color: #fff; 
+            padding-top: 20px;
+            z-index: 100;
+            box-shadow: 3px 0 10px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .admin-sidebar .brand-header { 
+            padding: 0 18px 18px 18px; 
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .admin-sidebar .brand-header i { font-size: 26px; color: #e74c3c; }
+        .admin-sidebar .brand-header h2 { margin: 0; font-size: 20px; font-weight: 700; color: #e74c3c; font-family: 'Poppins', sans-serif; letter-spacing: 0.5px; }
+
+        .admin-sidebar ul { list-style: none; padding: 12px 0; margin: 0; flex: 1; }
+        .admin-sidebar ul li { margin: 3px 10px; }
+        .admin-sidebar ul li a { 
+            color: #ecf0f1; 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 12px;
+            padding: 10px 14px; 
+            font-size: 14px; 
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .admin-sidebar ul li a:hover { background-color: var(--sidebar-hover); color: #ffffff; transform: translateX(3px); }
+        .admin-sidebar ul li a.active { background: linear-gradient(135deg, #e74c3c, #c0392b); color: #fff; font-weight: 600; box-shadow: 0 4px 10px rgba(231,76,60,0.3); }
+        .admin-sidebar ul li a i { font-size: 16px; width: 20px; text-align: center; }
+
+        .sidebar-footer {
+            padding: 12px 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 11px;
+            color: #95a5a6;
+            text-align: center;
+        }
+
+        /* Layout Content - Properly constrained to avoid right overflow */
+        .admin-content { 
+            margin-left: 240px; 
+            width: calc(100% - 240px);
+            padding: 20px 24px; 
+            min-height: 100vh; 
+        }
+        
+        /* Top Navigation Header */
+        .admin-header { 
+            background-color: var(--card-bg); 
+            padding: 14px 22px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+            margin-bottom: 20px; 
+        }
+        .admin-header .page-title h3 { margin: 0; font-size: 20px; font-weight: 700; color: var(--text-dark); font-family: 'Poppins', sans-serif; display: flex; align-items: center; gap: 10px; }
+        .admin-header .user-info { display: flex; align-items: center; gap: 14px; font-weight: 600; font-size: 13px; color: var(--text-dark); }
+        .admin-header .user-badge { display: flex; align-items: center; gap: 8px; background: #f8fafc; padding: 6px 14px; border-radius: 30px; border: 1px solid var(--border-color); }
+        .admin-header .user-badge i { color: #e74c3c; font-size: 15px; }
+
+        .btn-logout { 
+            background: linear-gradient(135deg, #e74c3c, #c0392b); 
+            color: #fff; 
+            padding: 7px 16px; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-logout:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(231,76,60,0.3); }
+
+        /* Shared Styling Components Across Pages */
+        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+        .section-title { font-size: 19px; font-weight: 700; font-family: 'Poppins', sans-serif; color: var(--text-dark); margin: 0; display: flex; align-items: center; gap: 10px; }
+
+        /* Buttons */
+        .btn-primary-custom {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: #fff;
+            padding: 9px 18px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(231,76,60,0.25);
+            white-space: nowrap;
+        }
+        .btn-primary-custom:hover { background: linear-gradient(135deg, #d63031, #ab2b1d); transform: translateY(-2px); box-shadow: 0 6px 14px rgba(231,76,60,0.35); }
+
+        .btn-secondary-custom {
+            background: #6c757d;
+            color: #fff;
+            padding: 9px 18px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .btn-secondary-custom:hover { background: #5a6268; }
+
+        /* Filter & Search Bar */
+        .filter-card {
+            background: #ffffff;
+            padding: 14px 18px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .search-group {
+            flex: 1;
+            min-width: 220px;
+            position: relative;
+        }
+        .search-group input {
+            width: 100%;
+            padding: 9px 14px 9px 38px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .search-group input:focus { border-color: var(--primary); }
+        .search-group i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 14px; }
+
+        .filter-select {
+            padding: 9px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 13px;
+            outline: none;
+            background-color: #fff;
+            color: var(--text-dark);
+            min-width: 140px;
+        }
+
+        /* Container Card & Tables */
+        .table-card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .table-responsive-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 5px;
+        }
+        .custom-table th {
+            background-color: #f8fafc;
+            color: #475569;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 12px 14px;
+            border-bottom: 2px solid var(--border-color);
+            text-align: left;
+            white-space: nowrap;
+        }
+        .custom-table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+            font-size: 13px;
+            vertical-align: middle;
+        }
+        .custom-table tbody tr:hover { background-color: #f8fafc; }
+
+        /* Badges */
+        .badge-pill {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+        .badge-blood-tag { background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; font-weight: 700; }
+        .badge-status-active { background: #dcfce7; color: #15803d; }
+        .badge-status-inactive { background: #f1f5f9; color: #64748b; }
+        .badge-status-pending { background: #fef3c7; color: #b45309; }
+        .badge-status-approved { background: #dcfce7; color: #15803d; }
+        .badge-status-rejected { background: #fee2e2; color: #b91c1c; }
+        .badge-urgency-emergency { background: #7f1d1d; color: #ffffff; }
+        .badge-urgency-urgent { background: #ea580c; color: #ffffff; }
+        .badge-urgency-normal { background: #0284c7; color: #ffffff; }
+
+        /* ACTION BUTTONS SIDE-BY-SIDE FLEX CONTAINER */
+        .actions-cell, td.actions-cell, th.actions-cell {
+            white-space: nowrap !important;
+            min-width: 90px;
+            width: 90px;
+        }
+        .actions-flex {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            gap: 6px !important;
+            white-space: nowrap !important;
+        }
+
+        .btn-icon-action {
+            width: 32px !important;
+            height: 32px !important;
+            min-width: 32px !important;
+            min-height: 32px !important;
+            border-radius: 6px;
+            border: none;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer;
+            color: #fff;
+            font-size: 13px;
+            transition: transform 0.15s ease, background-color 0.2s ease;
+            margin: 0 !important;
+            flex-shrink: 0 !important;
+        }
+        .btn-icon-action:hover { transform: scale(1.1); }
+        .btn-view { background-color: #0ea5e9; }
+        .btn-edit-act { background-color: #3b82f6; }
+        .btn-delete-act { background-color: #ef4444; }
+        .btn-approve-act { background-color: #22c55e; }
+        .btn-reject-act { background-color: #ef4444; }
+
+        /* Reusable Modal Form Styles */
+        .modal-backdrop-custom {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal-backdrop-custom.active { display: flex; }
+        
+        .modal-card {
+            background: #ffffff;
+            width: 700px;
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2), 0 10px 10px -5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            animation: modalFadeIn 0.25s ease-out;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.95) translateY(-10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .modal-card-header {
+            background: linear-gradient(135deg, #283645, #1e293b);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-card-header h4 { margin: 0; font-size: 18px; font-weight: 600; font-family: 'Poppins', sans-serif; display: flex; align-items: center; gap: 10px; }
+        .modal-card-header h4 i { color: #e74c3c; }
+        .modal-close-btn { background: rgba(255,255,255,0.1); border: none; color: #fff; width: 30px; height: 30px; border-radius: 50%; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+        .modal-close-btn:hover { background: rgba(231,76,60,0.8); }
+
+        .modal-card-body { padding: 20px; overflow-y: auto; flex: 1; }
+        .modal-card-footer { padding: 14px 20px; background: #f8fafc; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; gap: 10px; }
+
+        .grid-form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .grid-form .full-width { grid-column: span 2; }
+        
+        .form-field-group { display: flex; flex-direction: column; gap: 5px; }
+        .form-field-group label { font-size: 12px; font-weight: 600; color: #334155; }
+        .form-field-group label span.req { color: #e74c3c; margin-left: 2px; }
+        .form-field-group input, 
+        .form-field-group select, 
+        .form-field-group textarea {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 13px;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-field-group input:focus, 
+        .form-field-group select:focus, 
+        .form-field-group textarea:focus {
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 3px rgba(231,76,60,0.15);
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="admin-sidebar">
+            <div>
+                <div class="brand-header">
+                    <i class="fa-solid fa-droplet"></i>
+                    <h2>Admin Panel</h2>
+                </div>
+                <ul id="adminSidebarMenu">
+                    <li><a href="AdminDashboard.aspx" id="nav-dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                    <li><a href="AdminDonors.aspx" id="nav-donors"><i class="fa-solid fa-hand-holding-droplet"></i> Manage Donors</a></li>
+                    <li><a href="AdminUsers.aspx" id="nav-users"><i class="fa-solid fa-users"></i> Manage Users</a></li>
+                    <li><a href="AdminHospitals.aspx" id="nav-hospitals"><i class="fa-solid fa-hospital"></i> Manage Hospitals</a></li>
+                    <li><a href="AdminBloodRequests.aspx" id="nav-requests"><i class="fa-solid fa-bed-pulse"></i> Blood Requests</a></li>
+                    <li><a href="AdminBloodStock.aspx" id="nav-stock"><i class="fa-solid fa-boxes-stacked"></i> Blood Stock</a></li>
+                    <li><a href="AdminCamps.aspx" id="nav-camps"><i class="fa-solid fa-tent"></i> Donation Camps</a></li>
+                    <li><a href="AdminContacts.aspx" id="nav-contacts"><i class="fa-solid fa-envelope"></i> Contact Messages</a></li>
+                    <li><a href="Home.aspx" id="nav-website"><i class="fa-solid fa-globe"></i> View Website</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                LifeFlow Blood Bank v1.0
+            </div>
+        </div>
+
+        <div class="admin-content">
+            <div class="admin-header">
+                <div class="page-title">
+                    <h3 id="headerPageTitle"><i class="fa-solid fa-gauge"></i> Dashboard</h3>
+                </div>
+                <div class="user-info">
+                    <div class="user-badge">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>Welcome, <asp:Label ID="lblAdminName" runat="server" Text="Administrator"></asp:Label></span>
+                    </div>
+                    <asp:LinkButton ID="lnkLogout" runat="server" CssClass="btn-logout" OnClick="lnkLogout_Click">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </asp:LinkButton>
+                </div>
+            </div>
+
+            <main>
+                <asp:ContentPlaceHolder ID="AdminMainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </main>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        // Highlight active sidebar item and update header title dynamically
+        document.addEventListener("DOMContentLoaded", function () {
+            var path = window.location.pathname.toLowerCase();
+            var links = document.querySelectorAll("#adminSidebarMenu li a");
+            var headerTitle = document.getElementById("headerPageTitle");
+
+            links.forEach(function (link) {
+                var href = link.getAttribute("href").toLowerCase();
+                if (path.indexOf(href) !== -1 && href !== "") {
+                    link.classList.add("active");
+                    if (headerTitle) {
+                        var icon = link.querySelector("i") ? link.querySelector("i").outerHTML : "";
+                        var text = link.textContent.trim();
+                        headerTitle.innerHTML = icon + " " + text;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

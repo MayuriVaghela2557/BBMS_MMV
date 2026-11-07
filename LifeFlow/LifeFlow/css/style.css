@@ -784,3 +784,43 @@ table.avail-table tbody tr:last-child { border-bottom: none; }
 .mt-40 { margin-top: 40px; }
 .bg-white { background: var(--color-white); }
 .bg-tint { background: var(--color-tint); }
+
+/*----------------------------------------------------------------------------
+    22.gridview
+------------------------------------------------------------------------------*/
+
+.custom-grid {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+    .custom-grid th {
+        background: #c62828;
+        color: white;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .custom-grid td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .custom-grid tr:hover td {
+        background: #f5f5f5;
+    }
+
+    .custom-grid a {
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .custom-grid a:first-child {
+            color: #1976d2;
+        }
+
+        .custom-grid a:last-child {
+            color: #d32f2f;
+        }

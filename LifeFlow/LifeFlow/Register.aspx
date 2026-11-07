@@ -121,7 +121,7 @@
           </div>
         </div>
             <div>
-          <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Height="315px" Width="961px" OnRowCommand="GridView1_RowCommand">
+          <asp:GridView ID="GridView1" runat="server"  CssClass="custom-grid" AutoGenerateColumns="False" Height="315px" Width="961px" OnRowCommand="GridView1_RowCommand">
               <Columns>
                   <asp:TemplateField HeaderText="Full Name">
                       <ItemTemplate>

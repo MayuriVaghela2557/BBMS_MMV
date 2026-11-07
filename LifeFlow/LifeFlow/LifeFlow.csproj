@@ -73,7 +73,36 @@
     </Content>
     <Content Include="Web.config" />
     <Content Include="Site.Master" />
+    <Content Include="AdminSite.Master" />
     <Content Include="Home.aspx" />
+    <Content Include="AdminDashboard.aspx" />
+    <Content Include="AdminUsers.aspx" />
+    <Content Include="AdminDonors.aspx" />
+    <Content Include="AdminHospitals.aspx" />
+    <Content Include="AdminBloodRequests.aspx" />
+    <Content Include="AdminBloodStock.aspx" />
+    <Content Include="AdminCamps.aspx" />
+    <Content Include="AdminContacts.aspx" />
+    <Content Include="HospitalSite.Master" />
+    <Content Include="HospitalDashboard.aspx" />
+    <Content Include="HospitalRegister.aspx" />
+    <Content Include="HospitalLogin.aspx" />
+    <Content Include="HospitalProfile.aspx" />
+    <Content Include="ManageBloodStock.aspx" />
+    <Content Include="HospitalRequests.aspx" />
+    <Content Include="DonationRecords.aspx" />
+    <Content Include="HospitalReports.aspx" />
+    <Content Include="HospitalBloodRequests.aspx" />
+    <Content Include="DonorSite.Master" />
+    <Content Include="DonorDashboard.aspx" />
+    <Content Include="DonorRegister.aspx" />
+    <Content Include="DonorLogin.aspx" />
+    <Content Include="DonorProfile.aspx" />
+    <Content Include="DonationAppointment.aspx" />
+    <Content Include="MyDonations.aspx" />
+    <Content Include="DonorCamps.aspx" />
+    <Content Include="DonationEligibility.aspx" />
+    <Content Include="DonorHistory.aspx" />
     <Content Include="About.aspx" />
     <Content Include="DonateBlood.aspx" />
     <Content Include="RequestBlood.aspx" />
@@ -100,6 +129,204 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSite.Master.cs">
+      <DependentUpon>AdminSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminSite.Master.designer.cs">
+      <DependentUpon>AdminSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard.aspx.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard.aspx.designer.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUsers.aspx.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminUsers.aspx.designer.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDonors.aspx.cs">
+      <DependentUpon>AdminDonors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDonors.aspx.designer.cs">
+      <DependentUpon>AdminDonors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHospitals.aspx.cs">
+      <DependentUpon>AdminHospitals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminHospitals.aspx.designer.cs">
+      <DependentUpon>AdminHospitals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminBloodRequests.aspx.cs">
+      <DependentUpon>AdminBloodRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminBloodRequests.aspx.designer.cs">
+      <DependentUpon>AdminBloodRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminBloodStock.aspx.cs">
+      <DependentUpon>AdminBloodStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminBloodStock.aspx.designer.cs">
+      <DependentUpon>AdminBloodStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCamps.aspx.cs">
+      <DependentUpon>AdminCamps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCamps.aspx.designer.cs">
+      <DependentUpon>AdminCamps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminContacts.aspx.cs">
+      <DependentUpon>AdminContacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminContacts.aspx.designer.cs">
+      <DependentUpon>AdminContacts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalSite.Master.cs">
+      <DependentUpon>HospitalSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HospitalSite.Master.designer.cs">
+      <DependentUpon>HospitalSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalDashboard.aspx.cs">
+      <DependentUpon>HospitalDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HospitalDashboard.aspx.designer.cs">
+      <DependentUpon>HospitalDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalRegister.aspx.cs">
+      <DependentUpon>HospitalRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HospitalRegister.aspx.designer.cs">
+      <DependentUpon>HospitalRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalLogin.aspx.cs">
+      <DependentUpon>HospitalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HospitalLogin.aspx.designer.cs">
+      <DependentUpon>HospitalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalProfile.aspx.cs">
+      <DependentUpon>HospitalProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HospitalProfile.aspx.designer.cs">
+      <DependentUpon>HospitalProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBloodStock.aspx.cs">
+      <DependentUpon>ManageBloodStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageBloodStock.aspx.designer.cs">
+      <DependentUpon>ManageBloodStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalRequests.aspx.cs">
+      <DependentUpon>HospitalRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HospitalRequests.aspx.designer.cs">
+      <DependentUpon>HospitalRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DonationRecords.aspx.cs">
+      <DependentUpon>DonationRecords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonationRecords.aspx.designer.cs">
+      <DependentUpon>DonationRecords.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalReports.aspx.cs">
+      <DependentUpon>HospitalReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HospitalReports.aspx.designer.cs">
+      <DependentUpon>HospitalReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalBloodRequests.aspx.cs">
+      <DependentUpon>HospitalBloodRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+
+    <Compile Include="DonorSite.Master.cs">
+      <DependentUpon>DonorSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonorSite.Master.designer.cs">
+      <DependentUpon>DonorSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DonorDashboard.aspx.cs">
+      <DependentUpon>DonorDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonorDashboard.aspx.designer.cs">
+      <DependentUpon>DonorDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DonorRegister.aspx.cs">
+      <DependentUpon>DonorRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonorRegister.aspx.designer.cs">
+      <DependentUpon>DonorRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DonorLogin.aspx.cs">
+      <DependentUpon>DonorLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonorLogin.aspx.designer.cs">
+      <DependentUpon>DonorLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DonorProfile.aspx.cs">
+      <DependentUpon>DonorProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonorProfile.aspx.designer.cs">
+      <DependentUpon>DonorProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DonationAppointment.aspx.cs">
+      <DependentUpon>DonationAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonationAppointment.aspx.designer.cs">
+      <DependentUpon>DonationAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyDonations.aspx.cs">
+      <DependentUpon>MyDonations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyDonations.aspx.designer.cs">
+      <DependentUpon>MyDonations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DonorCamps.aspx.cs">
+      <DependentUpon>DonorCamps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonorCamps.aspx.designer.cs">
+      <DependentUpon>DonorCamps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DonationEligibility.aspx.cs">
+      <DependentUpon>DonationEligibility.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonationEligibility.aspx.designer.cs">
+      <DependentUpon>DonationEligibility.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DonorHistory.aspx.cs">
+      <DependentUpon>DonorHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

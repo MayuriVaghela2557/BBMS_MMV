@@ -19,11 +19,95 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 
+  <style>
+    .topbar-user-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 13px;
+      background: rgba(255,255,255,0.15);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+    .topbar-user-badge i {
+      color: #ff6b6b;
+      font-size: 15px;
+    }
+    .btn-topbar-admin {
+      background: #e74c3c;
+      color: #ffffff !important;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-right: 8px;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-topbar-admin:hover {
+      background: #c0392b;
+    }
+    .btn-topbar-hospital {
+      background: #0f766e;
+      color: #ffffff !important;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-right: 8px;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-topbar-hospital:hover {
+      background: #115e59;
+    }
+    .btn-topbar-donor {
+      background: #e11d48;
+      color: #ffffff !important;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-right: 8px;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-topbar-donor:hover {
+      background: #be123c;
+    }
+    .logout-link-btn {
+      color: #ffd1d1 !important;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .logout-link-btn:hover {
+      color: #ffffff !important;
+      text-decoration: underline;
+    }
+  </style>
+
   <asp:ContentPlaceHolder ID="head" runat="server">
   </asp:ContentPlaceHolder>
 </head>
 <body>
   <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <!-- ===================== TOP BAR ===================== -->
     <div class="topbar">
       <div class="container">
@@ -33,8 +117,31 @@
           <span class="hide-tablet"><i class="fa-solid fa-clock"></i> 24/7 Emergency Response</span>
         </div>
         <div class="topbar-actions">
-          <a href="Login.aspx" class="login-link">Login</a>
-          <a href="Register.aspx" class="register-link">Register</a>
+          <% if (IsUserLoggedIn()) { %>
+            <span class="topbar-user-badge">
+              <% if (IsHospitalLoggedIn()) { %>
+                <i class="fa-solid fa-hospital"></i>
+              <% } else if (IsDonorLoggedIn()) { %>
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              <% } else { %>
+                <i class="fa-solid fa-circle-user"></i>
+              <% } %>
+              <span><%= GetLoggedInUserName() %></span>
+            </span>
+            <% if (IsAdminLoggedIn()) { %>
+              <a href="AdminDashboard.aspx" class="btn-topbar-admin"><i class="fa-solid fa-gauge"></i> Admin Panel</a>
+            <% } else if (IsHospitalLoggedIn()) { %>
+              <a href="HospitalDashboard.aspx" class="btn-topbar-hospital"><i class="fa-solid fa-hospital"></i> Hospital Panel</a>
+            <% } else if (IsDonorLoggedIn()) { %>
+              <a href="DonorDashboard.aspx" class="btn-topbar-donor"><i class="fa-solid fa-hand-holding-heart"></i> Donor Panel</a>
+            <% } %>
+            <asp:LinkButton ID="lnkSiteLogout" runat="server" OnClick="lnkSiteLogout_Click" CssClass="logout-link-btn">
+              <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </asp:LinkButton>
+          <% } else { %>
+            <a href="Login.aspx" class="login-link"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+            <a href="Register.aspx" class="register-link"><i class="fa-solid fa-user-plus"></i> Register</a>
+          <% } %>
         </div>
       </div>
     </div>
@@ -46,7 +153,6 @@
           <span class="brand-mark"><i class="fa-solid fa-droplet"></i></span>
           <span class="brand-text">
             <span class="brand-name">LifeLine</span>
-            <%--<span class="brand-tag">Blood Bank</span>--%>
           </span>
         </a>
 
@@ -60,7 +166,6 @@
           <a href="Gallery.aspx" class="<%= GetActiveClass("Gallery.aspx") %>">Gallery</a>
           <a href="FAQ.aspx" class="<%= GetActiveClass("FAQ.aspx") %>">FAQ</a>
           <a href="Contact.aspx" class="<%= GetActiveClass("Contact.aspx") %>">Contact</a>
-       
         </nav>
 
         <div class="nav-cta">
